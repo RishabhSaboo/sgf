@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Contact - Shree Gopinath Fasteners</title>
+    <meta name="description" content="Browse our premium stainless steel fasteners. Quality manufacturing in Bahadurgarh, Haryana since 2004.">
+    
+    <style>
+        /* Modern CSS Variables */
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --text: #334155;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        /* Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); background-color: var(--light-bg); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header & Nav */
+        header { background: var(--white); padding: 1.5rem 0; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        h1 a { text-decoration: none; color: var(--primary); font-size: 1.5rem; font-weight: 800; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--accent); }
+
+        /* Product Section */
+        .products-hero { padding: 4rem 0 2rem; text-align: center; }
+        .products-hero h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2rem; 
+            padding: 2rem 0;
+        }
+
+        .product-item { 
+            background: var(--white); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow); 
+            transition: transform 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .product-item:hover { transform: translateY(-5px); }
+
+        .product-image { background: #f1f5f9; height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .product-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .product-info { padding: 1.5rem; }
+        .product-info h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.25rem; }
+        .product-info p { font-size: 0.95rem; margin-bottom: 1rem; color: #64748b; }
+
+        .product-details { list-style: none; border-top: 1px solid #f1f5f9; padding-top: 1rem; }
+        .product-details li { font-size: 0.85rem; padding-left: 1.2rem; position: relative; margin-bottom: 0.4rem; }
+        .product-details li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+        /* Bulk Section */
+        .bulk-orders { 
+            background: var(--primary); 
+            color: var(--white); 
+            padding: 3rem; 
+            border-radius: 12px; 
+            margin: 4rem 0; 
+            text-align: center; 
+        }
+        .bulk-orders h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+
+        /* Contact Section */
+        .contact { padding: 4rem 0; background: var(--white); }
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 3rem; 
+            margin-top: 2rem;
+        }
+        .contact-card { background: var(--light-bg); padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .contact-card h3 { margin-bottom: 1.5rem; color: var(--primary); }
+        
+        .contact-details { list-style: none; }
+        .contact-details li { margin-bottom: 1rem; }
+        .contact-details strong { display: block; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .cta-buttons { display: flex; flex-direction: column; gap: 1rem; }
+        .cta-button { 
+            display: block; 
+            text-align: center; 
+            padding: 1rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: opacity 0.3s;
+        }
+        .btn-email { background: var(--accent); color: var(--white); }
+        .btn-whatsapp { background: #25d366; color: var(--white); }
+        .cta-button:hover { opacity: 0.9; }
+
+        /* Footer */
+        footer { background: var(--primary); color: #94a3b8; padding: 4rem 0 2rem; margin-top: 4rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem; }
+        .footer-info h3 { color: var(--white); margin-bottom: 1rem; }
+        .footer-links h3 { color: var(--white); margin-bottom: 1rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links a { color: #94a3b8; text-decoration: none; }
+        .footer-bottom { border-top: 1px solid #1e293b; padding-top: 2rem; text-align: center; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            header .container { flex-direction: column; gap: 1rem; }
+            .products-hero h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">SGF Fasteners</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="products-hero">
+            <div class="container">
+                <h2>Our Premium SS Screw Catalog</h2>
+                <p>Manufacturing high-performance stainless steel fasteners in Bahadurgarh since 2004.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-image"><img src="img/self.jpeg" alt="SS Self-Tapping Screws" class="product-img"></div>
+                    <div class="product-info">
+                        <h3>SS Self-Tapping Screws</h3>
+                        <p>Designed to create their own threads as they are driven into the material.</p>
+                        <ul class="product-details">
+                            <li><strong>Available in various sizes</strong></li>
+                            <li>No pre-drilling required for most materials</li>
+                            <li>Corrosion-resistant Grade 304/316</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image"><img src="img/machine.jpeg" alt="SS Machine Screws" class="product-img"></div>
+                    <div class="product-info">
+                        <h3>SS Machine Screws</h3>
+                        <p>Precision-threaded fasteners for use with nuts or tapped holes.</p>
+                        <ul class="product-details">
+                            <li><strong>Available in various sizes</strong></li>
+                            <li>Multiple head styles: Pan, CSK, Round</li>
+                            <li>Ideal for electronics and machinery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image"><img src="img/wood.jpeg" alt="SS Wood Screws" class="product-img"></div>
+                    <div class="product-info">
+                        <h3>SS Wood Screws</h3>
+                        <p>Sharp, deep threads for maximum grip in timber and cabinetry.</p>
+                        <ul class="product-details">
+                            <li><strong>Available in various sizes</strong></li>
+                            <li>Gives a smooth, professional finish</li>
+                            <li>High tensile strength</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image"><img src="img/sheet.jpeg" alt="SS Sheet Metal Screws" class="product-img"></div>
+                    <div class="product-info">
+                        <h3>SS Sheet Metal Screws</h3>
+                        <p>Heavy-duty screws designed for securing thin metal sheets.</p>
+                        <ul class="product-details">
+                            <li><strong>Available in various sizes</strong></li>
+                            <li>Sharp points for quick penetration</li>
+                            <li>Highly durable for industrial framing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image"><img src="img/concrete.jpeg" alt="SS Concrete Screws" class="product-img"></div>
+                    <div class="product-info">
+                        <h3>SS Concrete Screws</h3>
+                        <p>Masonry screws for securing fixtures to brick and concrete.</p>
+                        <ul class="product-details">
+                            <li>High vibration resistance</li>
+                            <li>Tested for industrial loading</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-item" style="display: flex; align-items: center; justify-content: center; background: #e2e8f0;">
+                    <div class="product-info" style="text-align: center;">
+                        <h3>And Many More...</h3>
+                        <p>Custom threads, special heads, and unique dimensions available on order.</p>
+                        <a href="#contact" class="cta-button btn-email" style="display: inline-block;">Ask about custom sizes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bulk-orders">
+                <h3>Bulk Orders & Custom Fastener Solutions</h3>
+                <p>We specialize in manufacturing custom fasteners to meet your specific industrial requirements. Contact us for wholesale pricing.</p>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.2rem; color: var(--primary);">Connect with Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Direct Contact</h3>
+                        <ul class="contact-details">
+                            <li><strong>Email</strong> <a href="mailto:gopifast@yahoo.com" style="text-decoration:none; color:var(--text);">gopifast@yahoo.com</a></li>
+                            <li><strong>Phone</strong> <a href="tel:+919899211055" style="text-decoration:none; color:var(--text);">+91 9899211055</a></li>
+                            <li><strong>Location</strong> Bahadurgarh, Haryana, India</li>
+                            <li><strong>Hours</strong> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Instant Inquiry</h3>
+                        <div class="cta-buttons">
+                            <a href="mailto:gopifast@yahoo.com?subject=Bulk Order Inquiry" class="cta-button btn-email">Send Email Inquiry</a>
+                            <a href="https://wa.me/919899211055" target="_blank" class="cta-button btn-whatsapp">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Shree Gopinath Fasteners</h3>
+                    <p>Premium SS Fastener Manufacturer.</p>
+                    <p>Bahadurgarh, Haryana.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shree Gopinath Fasteners | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
